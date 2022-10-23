@@ -9,7 +9,9 @@ add_subdirectory(BaseClass)
 add_subdirectory(LinearRegression)
 
 add_executable(main Test/main.cpp)
-target_link_libraries(main PUBLIC preprocess)
+target_link_libraries(main PUBLIC 
+                preprocess
+                linearRegression)
 target_include_directories(main PUBLIC 
     "${PROJECT_BINARY_DIR}"
 )
