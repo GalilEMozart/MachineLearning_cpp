@@ -6,7 +6,7 @@ class BaseModel{
 
 public:
     
-    virtual void fit(Eigen::MatrixXd data)=0;
+    virtual void fit(Eigen::MatrixXd data, Eigen::VectorXd label,int n_iter, float lr)=0;
     virtual Eigen::VectorXd predict(Eigen::MatrixXd data)=0;
     
     float score(Eigen::MatrixXd data,Eigen::VectorXd label){
