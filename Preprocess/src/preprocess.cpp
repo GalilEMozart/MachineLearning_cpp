@@ -33,8 +33,13 @@ Eigen::MatrixXd Preprocess::read_csv(std::string pathFileName){
 
         //store data and count row
         while(std::getline(fichier,line)){
+            
             lineStream << line;
             std::vector<float> vec;
+            
+            //skip the first col (index)
+            std::getline(lineStream, cell, ',');
+            
             while (std::getline(lineStream, cell, ','))
             {
                 vec.push_back(std::stof(cell));
@@ -84,4 +89,16 @@ void Preprocess::write_csv(std::string pathFileName, Eigen::MatrixXd data_matrix
     return;
 }
 
+void Preprocess::print(Eigen::MatrixXd data){
 
+    int col = data.cols(); 
+    int row = data.rows();
+
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
+            std::cout << data(i,j) << " ";
+        }
+        std::cout << std::endl;
+    }
+
+}

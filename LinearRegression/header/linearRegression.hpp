@@ -10,7 +10,7 @@ class LinearRegression:BaseModel {
 public:
     LinearRegression(bool biais = true ) : biais(biais), trained(false){};
         // todo:force the weight to be positivie
-    void fit(Eigen::MatrixXd data, Eigen::VectorXd label,int n_iter, float lr);
-    Eigen::VectorXd predict(Eigen::MatrixXd data);
+    void fit(Eigen::MatrixXd data, Eigen::MatrixXd label,int n_iter, float lr);
+    Eigen::MatrixXd predict(Eigen::MatrixXd data);
 
 };
